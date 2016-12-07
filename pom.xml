@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>2.0.1.SNAPSHOT</version>
+    <name>Parent POM</name>
+    <packaging>pom</packaging>
+    <organization>
+        <name>Example, Inc.</name>
+    </organization>
+
+    <scm>
+        <developerConnection>scm:git:file:.</developerConnection>
+    </scm>
+
+    <modules>
+        <module>features</module>
+        <module>container</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Maven plugin versions -->
+        <maven-antrun-plugin.version>1.4</maven-antrun-plugin.version>
+        <maven-bundle-plugin.version>3.2.0</maven-bundle-plugin.version>
+        <maven-assembly-plugin.version>2.5.2</maven-assembly-plugin.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-compiler-plugin.source>1.8</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
+        <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+        <maven-shade-plugin.version>2.4.1</maven-shade-plugin.version>
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <maven-war-plugin.version>2.1</maven-war-plugin.version>
+        <build-helper-maven-plugin.version>1.11</build-helper-maven-plugin.version>
+        <!-- Project dependency versions -->
+        <camel.version>2.12.2</camel.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-cli.version>1.2</commons-cli.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <commons-dbcp2.version>2.1</commons-dbcp2.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-validator.version>1.5.0</commons-validator.version>
+        <cxf.version>3.1.7</cxf.version>
+        <bcprov.version>1.54</bcprov.version>
+        <flyway-core.version>3.2.1</flyway-core.version>
+        <geronimo-jpa_2.0_spec.version>1.1</geronimo-jpa_2.0_spec.version>
+        <google-collections.version>1.0</google-collections.version>
+        <gson.version>1.4</gson.version>
+        <h2.version>1.3.172</h2.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <http-components.version>4.4.1</http-components.version>
+        <jackson.version>1.9.12</jackson.version>
+        <jackson-databind.version>2.3.1</jackson-databind.version>
+        <jasypt.version>1.9.2</jasypt.version>
+        <jcip-annotations.version>1.0</jcip-annotations.version>
+        <jetty.9.version>9.2.15.v20160210</jetty.9.version>
+        <jline.version>2.14.1</jline.version>
+        <joda-time-2.version>2.7</joda-time-2.version>
+        <jpa.version>2.3.0</jpa.version>
+        <jscep.version>2.3.0</jscep.version>
+        <jsontoken.version>1.1</jsontoken.version>
+        <karaf.version>4.1.0-SNAPSHOT</karaf.version>
+        <karaf.dot.version>4.1.0.SNAPSHOT</karaf.dot.version>
+        <mockito-core.version>1.9.5</mockito-core.version>
+        <ms-sql-jdbc.version>4.1</ms-sql-jdbc.version>
+        <openjpa.version>2.4.1</openjpa.version>
+        <opensaml.version>3.1.1</opensaml.version>
+        <osgi.version>5.0.0</osgi.version>
+        <pax-jdbc.version>0.9.0</pax-jdbc.version>
+        <pax-web.version>4.2.6</pax-web.version>
+        <persistence-api.version>2.0.0</persistence-api.version>
+        <servicemix.specs.version>2.7.0</servicemix.specs.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <spring-data-commons.version>1.7.3.RELEASE</spring-data-commons.version>
+        <spring-data-jpa.version>1.5.3.RELEASE</spring-data-jpa.version>
+        <spring-dm.version>1.2.1</spring-dm.version>
+        <springframework.version>3.2.14.RELEASE</springframework.version>
+        <springframework.feature.version>3.2.14.RELEASE_1</springframework.feature.version>
+        <testng.version>6.8.5</testng.version>
+        <transaction.version>1.3.0</transaction.version>
+        <transaction-api.version>1.2.0</transaction-api.version>
+        <wss4j.version>2.1.7</wss4j.version>
+        <xalan.bundle.version>2.7.2_3</xalan.bundle.version>
+        <xalan-serializer.bundle.version>2.7.2_1</xalan-serializer.bundle.version>
+        <xerces.version>2.11.0</xerces.version>
+        <xml-apis.version>1.4.01</xml-apis.version>
+    </properties>
+
+    <dependencies>
+        <!-- Testing dependencies. -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging dependencies. -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven-compiler-plugin.source}</source>
+                        <target>${maven-compiler-plugin.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <!-- surefire runs unit tests -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <!-- Skip integration tests that follow the naming convention 
+                        of ending with "IT". -->
+                    <configuration>
+                        <excludes>
+                            <exclude>**/*IT.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <!-- failsafe runs integration tests. -->
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*IT.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
