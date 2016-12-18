@@ -28,8 +28,7 @@
         <feature>system</feature>
 
         <feature>scr</feature>
-        <feature>jetty</feature>
-        <feature>pax-http-whiteboard</feature>
+		<feature>http</feature>
 
 		<feature>something-else</feature>
     </feature>

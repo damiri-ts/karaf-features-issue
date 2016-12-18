@@ -74,7 +74,7 @@
         <opensaml.version>3.1.1</opensaml.version>
         <osgi.version>5.0.0</osgi.version>
         <pax-jdbc.version>0.9.0</pax-jdbc.version>
-        <pax-web.version>4.2.6</pax-web.version>
+        <pax-web.version>6.0.0</pax-web.version>
         <persistence-api.version>2.0.0</persistence-api.version>
         <servicemix.specs.version>2.7.0</servicemix.specs.version>
         <slf4j.version>1.7.12</slf4j.version>
@@ -126,6 +126,47 @@
             <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <pluginManagement>
